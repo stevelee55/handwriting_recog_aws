@@ -1,0 +1,4 @@
+Instructions on how to set up handwriting_recog AWS pipeline
+
+# Overview #
+
