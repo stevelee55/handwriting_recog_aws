@@ -125,7 +125,7 @@ Now that your AWS pipeline setup is complete, it's now time to test it.
 
 ![alt text](./instructions_screenshots/aws/pipeline_runthrough_step_3.png)
 
-4. Download the results.txt to take a look at the inference results made by your onnx model - this shows that the model predicted that the uploaded digit.png is "1" with 0.573457 confidence, which is correct!
+4. Download the results.txt to take a look at the inference results made by your onnx model - this shows that the model predicted that the uploaded digit.png is "1" with 0.573457 probability, which is correct!
 
 results.txt
 ![alt text](./instructions_screenshots/aws/pipeline_runthrough_step_4.png)
