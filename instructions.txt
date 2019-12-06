@@ -1,4 +1,20 @@
 Instructions on how to set up handwriting_recog AWS pipeline
 
-# Overview #
+# Pipeline Overview
 
+Image
+
+Build AWS Pipeline
+- S3
+- Lambda
+
+Upload Components
+- module.zip
+	- load_model_infer.py
+	- packages
+- model.onnx
+
+
+Usage
+- digit.png -> S3
+- S3 <- results.txt
