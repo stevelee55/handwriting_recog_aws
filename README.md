@@ -142,4 +142,8 @@ After you've created this pipeline and started testing with different images, yo
 As you are attempting to modify the script and re-deploy it to AWS, you will quickly realize there are various things to consider. You will start to have questions like, "how do I test the new script locally?" or "why do I get this error when I upload my new module.zip?". Here are some of the most common things that come up very quickly.
 
 1. "How do I test the new script locally?"
-- asdfasdf
+- There are many ways to do this, but the key thing is that you need to test the script in an environment that is exactly the same or very similar to the environment in Amazon Lambda. Amazon Lambda is a Linux environment, so what I, personally, did was creating a Linux Docker container and run the script in it - this is one of the fastest ways to get Linux environment setup and up and running quickly.
+
+2. "Why do I get an error when I try to upload a new module.zip" to Lambda via Amazon S3?"
+- This could be happening for various reasons, but one of the most common causes for this issue is the way you are "zipping" or "compressing" the files (load_model_infer.py and model.onnx) - you should not zip the folder that the files are in, but you should select the two files and zip them instead.
+
