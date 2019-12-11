@@ -125,10 +125,21 @@ Now that your AWS pipeline setup is complete, it's now time to test it.
 
 ![alt text](./instructions_screenshots/aws/pipeline_runthrough_step_3.png)
 
-4. Download the results.txt to take a look at the inference results made by your onnx model - this shows that the model predicted that the uploaded digit.png is "1" with 0.573457 probability, which is correct!
+4. Download the results.txt to take a look at the inference results made by your onnx model - this shows that the model predicted that the uploaded digit.png is "1" with 0.573457 probability, which is (somewhat) correct!
 
 results.txt
 ![alt text](./instructions_screenshots/aws/pipeline_runthrough_step_4.png)
 
 digit.png
 ![alt text](./instructions_screenshots/aws/pipeline_runthrough_step_5.png)
+
+## Things to consider/think about when-creating/after-creating this pipeline
+
+After you've created this pipeline and started testing with different images, you will notice that the results are not as good as the results from this demo https://microsoft.github.io/onnxjs-demo/#/mnist, which uses the exact same model that we are using to predict images that we are using - the test images that are included are also generated from this demo website. Why does this happen?
+
+1. This could be caused by the way we are currently converting raw-input images into 28 x 28. In this pipeline, the image conversion happens in the "load_model_infer.py" - take a look at the script and see if anything could be changed to get better results. Once you find a way to make it better, test it locally and try deploying the new script to the Lambda and test it.
+
+As you are attempting to modify the script and re-deploy it to AWS, you will quickly realize there are various things to consider. You will start to have questions like, "how do I test the new script locally?" or "why do I get this error when I upload my new module.zip?". Here are some of the most common things that come up very quickly.
+
+1. "How do I test the new script locally?"
+- asdfasdf
