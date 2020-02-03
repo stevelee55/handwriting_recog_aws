@@ -8,7 +8,7 @@ from datetime import datetime
 import boto3
 
 lambda_tmp_directory = "/tmp"
-s3_bucket_name = "handwriting-recog-aws-bucket"
+s3_bucket_name = "<your-unique-s3-bucket-name>"
 model_file_name = "model.onnx"
 input_file_name = "digit.png"
 temp_resized_input_file_name = "resized_" + input_file_name

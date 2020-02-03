@@ -11,12 +11,18 @@ Maintainer: stevesl@umich.edu
 ![alt text](./instructions_screenshots/aws/handwriting_recog_aws_pipeline.png)
 
 ## Building the Pipeline Overview
+0. Create "module.zip"
 1. Create an AWS Account
 2. Setup Amazon S3 (AWS)
 3. Setup Amazon Lambda (AWS)
 4. Upload model.onnx and module.zip to Amazon S3
 5. Load module.zip (load_model.infer.py and packages) to the Lambda
 6. Run-through the pipeline
+
+### Create "module.zip"
+1. Locate "load_model_infer.py" file and "packages" directory in "files_for_amazon_s3" directory.
+2. Open up "load_model.infer.py" and change "<your-unique-s3-bucket-name>" to s3 bucket name that is (literally)globally unique - we'd suggest use combination of your uniquename and "umich.edu".
+3. Zip "load_model_infer.py" and "packages", and rename the .zip file "module.zip".
 
 ### Create an AWS Account
 1. Follow the steps on this page: https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/
