@@ -21,7 +21,7 @@ Maintainer: stevesl@umich.edu
 
 ### Create "module.zip"
 1. Locate "load_model_infer.py" file and "packages" directory in "files_for_amazon_s3" directory.
-2. Open up "load_model.infer.py" and change "<your-unique-s3-bucket-name>" to s3 bucket name that is (literally)globally unique - we'd suggest use combination of your uniquename and "umich.edu".
+2. Open up "load_model.infer.py" and change "\<your-unique-s3-bucket-name\>" to s3 bucket name that is (literally)globally unique - we'd suggest use combination of your uniquename and "umich.edu".
 3. Zip "load_model_infer.py" and "packages", and rename the .zip file "module.zip".
 
 ### Create an AWS Account
@@ -81,9 +81,15 @@ Maintainer: stevesl@umich.edu
 
 ![alt text](./instructions_screenshots/aws/amazon_lambda_step_6.png)
 
-7. Once the Lambda function editing/configuring page is loaded, scroll down to the section named "Execution role". Once you are there, in the search field under the "Existing role" option, search for "lambda-with-s3-fullaccess" and select it - this gives Lambda access to Amazon S3's contents, such as buckets and contents inside of the buckets, etc.
+7. Once the Lambda function editing/configuring page is loaded, scroll down to the section named "Execution role". Once you are there, click on the "View the \<default-role-name\> role on the IAM console" link that is highlighted blue.
 
 ![alt text](./instructions_screenshots/aws/amazon_lambda_step_7.png)
+
+Once you are at the IAM console page, click on the "Attach Policies" button. Then search for "AmazonS3FullAccess" policy and click on the "Attach Policy" button - this gives Lambda access to Amazon S3's contents, such as buckets and contents inside of the buckets, etc.
+
+![alt text](./instructions_screenshots/aws/amazon_lambda_step_7.1.png)
+
+![alt text](./instructions_screenshots/aws/amazon_lambda_step_7.2.png)
 
 8. Once "Execution role" is set, take a look at the "Basic settings" section. Under "Timeout" set the value to 10 seconds. Afterwards, click "Save" button located at the upper right of the Lambda console page.
 
@@ -152,4 +158,3 @@ As you are attempting to modify the script and re-deploy it to AWS, you will qui
 
 2. "Why do I get an error when I try to upload a new module.zip" to Lambda via Amazon S3?"
 - This could be happening for various reasons, but one of the most common causes for this issue is the way you are "zipping" or "compressing" the files (load_model_infer.py and model.onnx) - you should not zip the folder that the files are in, but you should select the two files and zip them instead.
-
